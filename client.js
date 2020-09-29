@@ -62,8 +62,8 @@ function employeeLoop(array) {
 function SuperEmployee(employeeObject) {
   this.name = employeeObject.name;
   this.bonusPercentage = calculateBonus(employeeObject);
-  this.annualSalary = employeeObject.annualSalary;
-  this.reviewRating = employeeObject.reviewRating;
+  // this.totalCompensation = employeeObject.annualSalary;
+  // this.totalBonus = employeeObject.annualSalary / 100 * calculatedBonus(employeeObject);
 
   
   // This is where the bonus percentage gets calculated
@@ -101,6 +101,12 @@ function calculateBonus(employeeToCalculate) {
   if (employeeToCalculate.annualSalary > 65000) {
     bonusPercentage -= 1;
   }
+  if (bonusPercentage < 0){
+    return 0;
+  }
+  if(bonusPercentage > 13){
+    return 13;
+  } 
 
   return bonusPercentage;
 }
