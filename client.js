@@ -42,23 +42,66 @@ const employees = [
 
 console.log( employees );
 console.log(employeeLoop( employees ));
+console.log(employees[2]);
+console.log('Scout info',SuperEmployee(employees[2]));
+console.log(calculateBonus(employees[2]));
+
+
 
 function employeeLoop(array) {
   let tempArray = [];
+  // creates an empty array to store the new employee objects
   for (let i = 0; i < array.length; i++) {
     tempArray.push(new SuperEmployee(array[i]));
   }
   console.log(tempArray);
   return tempArray;
+  // tests against the example array
 }
 
 function SuperEmployee(employeeObject) {
   this.name = employeeObject.name;
   this.employeeNumber = employeeObject.employeeNumber;
   this.annualSalary = employeeObject.annualSalary;
-  this.reviewRating = employeeObject.reviewRating
+  this.reviewRating = employeeObject.reviewRating;
 
+  
   // This is where the bonus percentage gets calculated
   // totalCompensation = this.annualSalary + bonus;
   //
 }
+
+// function employeeBonus(){
+//   if()
+// }
+
+function calculateBonus(employeeToCalculate) {
+  console.log('employee', employeeToCalculate);
+  //rating check
+  let bonusPercentage = 0;
+  let rating = employeeToCalculate.reviewRating;
+  if (rating <= 2){
+    console.log('No bonus for you!');
+    return bonusPercentage;
+  } else if (rating === 3) {
+    console.log('Bonus should be 4%');
+    bonusPercentage = 4;
+  }
+    else if (rating === 4) {
+    console.log('Bonus should be 6%');
+    bonusPercentage = 6;
+  }
+    else if (rating === 5) {
+    console.log('Bonus should be 10%');
+    bonusPercentage = 10;
+  }
+  if (employeeToCalculate.employeeNumber.length == 4) {
+    bonusPercentage += 5;
+  }
+  if (employeeToCalculate.annualSalary > 65000) {
+    bonusPercentage -= 1;
+  }
+
+  return bonusPercentage;
+}
+  
