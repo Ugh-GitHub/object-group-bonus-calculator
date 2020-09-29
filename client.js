@@ -41,3 +41,24 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+console.log(employeeLoop( employees ));
+
+function employeeLoop(array) {
+  let tempArray = [];
+  for (let i = 0; i < array.length; i++) {
+    tempArray.push(new SuperEmployee(array[i]));
+  }
+  console.log(tempArray);
+  return tempArray;
+}
+
+function SuperEmployee(employeeObject) {
+  this.name = employeeObject.name;
+  this.employeeNumber = employeeObject.employeeNumber;
+  this.annualSalary = employeeObject.annualSalary;
+  this.reviewRating = employeeObject.reviewRating
+
+  // This is where the bonus percentage gets calculated
+  // totalCompensation = this.annualSalary + bonus;
+  //
+}
