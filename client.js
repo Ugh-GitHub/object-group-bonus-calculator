@@ -61,7 +61,7 @@ function employeeLoop(array) {
 
 function SuperEmployee(employeeObject) {
   this.name = employeeObject.name;
-  this.employeeNumber = employeeObject.employeeNumber;
+  this.bonusPercentage = calculateBonus(employeeObject);
   this.annualSalary = employeeObject.annualSalary;
   this.reviewRating = employeeObject.reviewRating;
 
