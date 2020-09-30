@@ -1,3 +1,6 @@
+$( document ).ready( readyNow );
+
+
 const employees = [
   {
     name: 'Atticus',
@@ -48,7 +51,10 @@ console.log(employees[2]);
 console.log('Scout info',newEmployee(employees[2]));
 
 
-
+function readyNow() {
+  console.log('Ready Now');
+  // all of the appending
+}
 
  function employeeLoop(array) {
   let tempArray = [];
@@ -71,8 +77,8 @@ function newEmployee(employeeObj) {
   let tempObj = {
     name: name,
     bonusPercentage: bonusPercentage,
-    totalBonus: totalBonus,
-    totalCompensation: totalCompensation
+    totalCompensation: totalCompensation,
+    totalBonus: totalBonus
   }
   console.log(tempObj);
   return tempObj;

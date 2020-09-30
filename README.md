@@ -72,5 +72,9 @@ NOTE: You may abstract out this bonus calculation into a second function if you 
 
 ## Stretch Goals
 - Put the output on the DOM (visually on the page).
+<!-- jquery -->
 - Make the app run only after the user clicks on a button on the page
+<!-- html -->
+
 - Then style the output, making it visually appealing.
+<!-- css -->
