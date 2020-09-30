@@ -55,7 +55,8 @@ console.log('Scout info',newEmployee(employees[2]));
   //creates an empty array to store the new employee objects
    for (let i = 0; i < array.length; i++) {
     // console.log('in employee loop');
-    tempArray.push(newEmployee(array[i]));
+    let newObj = newEmployee(array[i]);
+    tempArray.push(newObj);
   }
   console.log(tempArray);
   return tempArray;
@@ -102,6 +103,8 @@ function calculateBonus(employeeToCalculate) {
   let rating = employeeToCalculate.reviewRating;
   if (rating <= 2){
     // console.log('end employee bonus');
+    // Decided to put a return here because they asked that employees with 1 or 2 stars
+    // not receive ANY bonus.
     return bonusPercentage;
   } else if (rating === 3) {
     bonusPercentage = 4;

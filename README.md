@@ -31,8 +31,8 @@ Each **Employee** currently is configured in this way:
 
 Loop over the `employees` array and do the following:
 
-* use each employee object as the input to the function described below.
-* `console.log` the results of each iteration.
+[x] use each employee object as the input to the function described below.
+[x] `console.log` the results of each iteration.
 
 ## Function Logic
 
@@ -42,9 +42,9 @@ Write a declared function that takes in one **Employee** object (as an argument 
 <!-- done -->
 [x] The `bonusPercentage` property should contain the bonus percentage the employee is to receive. See section below for calculation instructions.
 <!-- done -->
-* The `totalCompensation` property should be the adjusted annual compensation (base annual + bonus)
+[x] The `totalCompensation` property should be the adjusted annual compensation (base annual + bonus)
 
-* The `totalBonus` should be the employee's total bonus rounded to the nearest dollar.
+[x] The `totalBonus` should be the employee's total bonus rounded to the nearest dollar.
 <!-- work in progress -->
 
 ### Individual Bonus calculation
