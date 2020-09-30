@@ -41,7 +41,7 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
-console.log(calculateBonus(employees[2]));
+console.log(employeeLoop(employees));
 console.log(newEmployee(employees[2]));
 //console.log(employeeLoop(SuperEmployee(employees) ));
 console.log(employees[2]);
@@ -50,17 +50,17 @@ console.log('Scout info',newEmployee(employees[2]));
 
 
 
-//  function employeeLoop(array) {
-//   let tempArray = [];
-// //   // creates an empty array to store the new employee objects
-//    for (let i = 0; i < array.length; i++) {
-//     console.log('in employee loop');
-// //     tempArray.push(new SuperEmployee(array[i]));
-//   }
-//   console.log(tempArray);
-// //   return tempArray;
-//   // tests against the example array
-// }
+ function employeeLoop(array) {
+  let tempArray = [];
+  //creates an empty array to store the new employee objects
+   for (let i = 0; i < array.length; i++) {
+    // console.log('in employee loop');
+    tempArray.push(newEmployee(array[i]));
+  }
+  console.log(tempArray);
+  return tempArray;
+  //tests against the example array
+}
 
 function newEmployee(employeeObj) {
   let name = employeeObj.name;
@@ -96,12 +96,12 @@ function newEmployee(employeeObj) {
 // }
 
 function calculateBonus(employeeToCalculate) {
-  console.log('in calculate bonus');
+  // console.log('in calculate bonus');
   //rating check
   let bonusPercentage = 0;
   let rating = employeeToCalculate.reviewRating;
   if (rating <= 2){
-    console.log('end employee bonus');
+    // console.log('end employee bonus');
     return bonusPercentage;
   } else if (rating === 3) {
     bonusPercentage = 4;
@@ -119,14 +119,14 @@ function calculateBonus(employeeToCalculate) {
     bonusPercentage -= 1;
   }
   if (bonusPercentage < 0){
-    console.log('end employee bonus');
+    // console.log('end employee bonus');
     return 0;
   }
   if(bonusPercentage > 13){
-    console.log('end employee bonus');
+    // console.log('end employee bonus');
     return 13;
   } 
-  console.log('end employee bonus');
+  // console.log('end employee bonus');
   return bonusPercentage;
 }
   
