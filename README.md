@@ -38,10 +38,14 @@ Loop over the `employees` array and do the following:
 
 Write a declared function that takes in one **Employee** object (as an argument to the function), and returns a new **object** with the following properties:
 
-* The `name` property should contain the employee's name.
-* The `bonusPercentage` property should contain the bonus percentage the employee is to receive. See section below for calculation instructions.
+[x] The `name` property should contain the employee's name.
+<!-- done -->
+[x] The `bonusPercentage` property should contain the bonus percentage the employee is to receive. See section below for calculation instructions.
+<!-- done -->
 * The `totalCompensation` property should be the adjusted annual compensation (base annual + bonus)
+
 * The `totalBonus` should be the employee's total bonus rounded to the nearest dollar.
+<!-- work in progress -->
 
 ### Individual Bonus calculation
 

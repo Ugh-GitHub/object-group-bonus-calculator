@@ -41,58 +41,75 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
-console.log(employeeLoop( employees ));
-console.log(employees[2]);
-console.log('Scout info',SuperEmployee(employees[2]));
 console.log(calculateBonus(employees[2]));
+console.log(newEmployee(employees[2]));
+//console.log(employeeLoop(SuperEmployee(employees) ));
+console.log(employees[2]);
+console.log('Scout info',newEmployee(employees[2]));
 
 
 
-function employeeLoop(array) {
-  let tempArray = [];
-  // creates an empty array to store the new employee objects
-  for (let i = 0; i < array.length; i++) {
-    tempArray.push(new SuperEmployee(array[i]));
+
+//  function employeeLoop(array) {
+//   let tempArray = [];
+// //   // creates an empty array to store the new employee objects
+//    for (let i = 0; i < array.length; i++) {
+//     console.log('in employee loop');
+// //     tempArray.push(new SuperEmployee(array[i]));
+//   }
+//   console.log(tempArray);
+// //   return tempArray;
+//   // tests against the example array
+// }
+
+function newEmployee(employeeObj) {
+  let name = employeeObj.name;
+  let bonusPercentage = calculateBonus(employeeObj);
+  let totalBonus = bonusPercentage * employeeObj.annualSalary / 100;
+  let totalCompensation = employeeObj.annualSalary * 1 + totalBonus;
+  let tempObj = {
+    name: name,
+    bonusPercentage: bonusPercentage,
+    totalBonus: totalBonus,
+    totalCompensation: totalCompensation
   }
-  console.log(tempArray);
-  return tempArray;
-  // tests against the example array
+  console.log(tempObj);
+  return tempObj;
 }
 
-function SuperEmployee(employeeObject) {
-  this.name = employeeObject.name;
-  this.bonusPercentage = calculateBonus(employeeObject);
-  // this.totalCompensation = employeeObject.annualSalary;
-  // this.totalBonus = employeeObject.annualSalary / 100 * calculatedBonus(employeeObject);
-
+// function SuperEmployee(employeeObject) {
+//   console.log('in SuperEmployee');
+//   this.name = employeeObject.name;
+//   console.log(calculateBonus(employeeObject));
+//   console.log("Updated");
+//   this.bonusPercentage = calculateBonus(employeeObject);
+//   this.totalBonus = employeeObject.annualSalary / 100 * calculateBonus(employeeObject);
+//   this.totalCompensation = employeeObject.annualSalary + this.totalBonus; 
   
   // This is where the bonus percentage gets calculated
   // totalCompensation = this.annualSalary + bonus;
   //
-}
+// }
 
 // function employeeBonus(){
 //   if()
 // }
 
 function calculateBonus(employeeToCalculate) {
-  console.log('employee', employeeToCalculate);
+  console.log('in calculate bonus');
   //rating check
   let bonusPercentage = 0;
   let rating = employeeToCalculate.reviewRating;
   if (rating <= 2){
-    console.log('No bonus for you!');
+    console.log('end employee bonus');
     return bonusPercentage;
   } else if (rating === 3) {
-    console.log('Bonus should be 4%');
     bonusPercentage = 4;
   }
     else if (rating === 4) {
-    console.log('Bonus should be 6%');
     bonusPercentage = 6;
   }
     else if (rating === 5) {
-    console.log('Bonus should be 10%');
     bonusPercentage = 10;
   }
   if (employeeToCalculate.employeeNumber.length == 4) {
@@ -102,12 +119,14 @@ function calculateBonus(employeeToCalculate) {
     bonusPercentage -= 1;
   }
   if (bonusPercentage < 0){
+    console.log('end employee bonus');
     return 0;
   }
   if(bonusPercentage > 13){
+    console.log('end employee bonus');
     return 13;
   } 
-
+  console.log('end employee bonus');
   return bonusPercentage;
 }
   
